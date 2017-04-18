@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider_isim_beh.exe" -prj "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider_beh.prj" "work.clock_divider" "work.glbl" 
