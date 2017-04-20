@@ -25,15 +25,20 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="clock_divider.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="clock_divider.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="clock_divider.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="clock_divider.ngr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clock_divider.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="clock_divider.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="clock_divider.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="clock_divider.xst"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clock_divider_beh.prj"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="clock_divider_envsettings.html"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="clock_divider_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="clock_divider_isim_beh.wdb"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clock_divider_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="clock_divider_summary.html"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clock_divider_test_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="clock_divider_test_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clock_divider_test_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="clock_divider_test_isim_beh.wdb"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clock_divider_test_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="clock_divider_xst.xrpt"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
@@ -45,50 +50,50 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1492549836" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1492549836">
+    <transform xil_pn:end_ts="1492709340" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1492709340">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1492550857" xil_pn:in_ck="475318628220499691" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1492550857">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="clock_divider.v"/>
-      <outfile xil_pn:name="clock_divider_test.v"/>
-    </transform>
-    <transform xil_pn:end_ts="1492550857" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-4681649662508564126" xil_pn:start_ts="1492550857">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1492550857" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-1035236682248363616" xil_pn:start_ts="1492550857">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1492550188" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="8033192094025464726" xil_pn:start_ts="1492550188">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1492550857" xil_pn:in_ck="475318628220499691" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1492550857">
+    <transform xil_pn:end_ts="1492720285" xil_pn:in_ck="475318628220499691" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1492720285">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="clock_divider.v"/>
       <outfile xil_pn:name="clock_divider_test.v"/>
     </transform>
-    <transform xil_pn:end_ts="1492550859" xil_pn:in_ck="475318628220499691" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3495744143205482454" xil_pn:start_ts="1492550857">
+    <transform xil_pn:end_ts="1492718424" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-456640933265943967" xil_pn:start_ts="1492718424">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1492718424" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="1356682201830805663" xil_pn:start_ts="1492718424">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1492709340" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="8033192094025464726" xil_pn:start_ts="1492709340">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1492720285" xil_pn:in_ck="475318628220499691" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1492720285">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="clock_divider.v"/>
+      <outfile xil_pn:name="clock_divider_test.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1492720286" xil_pn:in_ck="475318628220499691" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8914447308057119752" xil_pn:start_ts="1492720285">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="clock_divider_beh.prj"/>
-      <outfile xil_pn:name="clock_divider_isim_beh.exe"/>
+      <outfile xil_pn:name="clock_divider_test_beh.prj"/>
+      <outfile xil_pn:name="clock_divider_test_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1492550859" xil_pn:in_ck="3908665238562320193" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5099014789553463251" xil_pn:start_ts="1492550859">
+    <transform xil_pn:end_ts="1492720286" xil_pn:in_ck="3908665238562320193" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7139050721416560437" xil_pn:start_ts="1492720286">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="clock_divider_isim_beh.wdb"/>
+      <outfile xil_pn:name="clock_divider_test_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>
@@ -120,16 +125,24 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1492549784" xil_pn:in_ck="8322302915924630038" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="3904910932042425086" xil_pn:start_ts="1492549773">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1492709107" xil_pn:in_ck="8322302915924630038" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="3904910932042425086" xil_pn:start_ts="1492709095">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="clock_divider.lso"/>
+      <outfile xil_pn:name="clock_divider.ngc"/>
+      <outfile xil_pn:name="clock_divider.ngr"/>
       <outfile xil_pn:name="clock_divider.prj"/>
+      <outfile xil_pn:name="clock_divider.stx"/>
       <outfile xil_pn:name="clock_divider.syr"/>
       <outfile xil_pn:name="clock_divider.xst"/>
+      <outfile xil_pn:name="clock_divider_stx_beh.prj"/>
+      <outfile xil_pn:name="clock_divider_test_stx_beh.prj"/>
       <outfile xil_pn:name="clock_divider_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>

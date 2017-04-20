@@ -1,20 +1,22 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/katie/Documents/ECE3700/UART_FPGA/clock_divider_isim_beh.exe -prj /home/katie/Documents/ECE3700/UART_FPGA/clock_divider_beh.prj work.clock_divider work.glbl 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/katie/Documents/ECE3700/UART_FPGA/clock_divider_test_isim_beh.exe -prj /home/katie/Documents/ECE3700/UART_FPGA/clock_divider_test_beh.prj work.clock_divider_test work.glbl 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
 Analyzing Verilog file "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider.v" into library work
+Analyzing Verilog file "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider_test.v" into library work
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
 Fuse Memory Usage: 94672 KB
-Fuse CPU Usage: 1220 ms
+Fuse CPU Usage: 1130 ms
 Compiling module clock_divider
+Compiling module clock_divider_test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 2 Verilog Units
-Built simulation executable /home/katie/Documents/ECE3700/UART_FPGA/clock_divider_isim_beh.exe
-Fuse Memory Usage: 654836 KB
-Fuse CPU Usage: 1220 ms
-GCC CPU Usage: 220 ms
+Compiled 3 Verilog Units
+Built simulation executable /home/katie/Documents/ECE3700/UART_FPGA/clock_divider_test_isim_beh.exe
+Fuse Memory Usage: 654856 KB
+Fuse CPU Usage: 1150 ms
+GCC CPU Usage: 270 ms

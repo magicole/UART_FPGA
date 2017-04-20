@@ -36,8 +36,8 @@ module clock_divider_test;
 		.clk_out(clk_out)
 	);
 		reg [9:0] counter = 10'b0; 
-
 	
+	//always #10 clk = ~clk; 
 
 	initial begin
 		// Initialize Inputs
@@ -49,18 +49,22 @@ module clock_divider_test;
 	end
 
 	always begin
-		#10;
+		#10
 		clk <= ~clk; 
-		counter <= counter + 1'b1;
+		if(clk) begin
+			counter <= counter + 1'b1;
+		end
 	end
 	
 	always@(counter)
 	begin
+		$display("Clock outside if is: %b", clk); 
 		// Add stimulus here
 		if(counter == 650)
 		begin
 			counter <= 10'b0; 
 			$display("The value of clk_out is: %b", clk_out); 
+			$display("Clock inside if is: %b", clk); 
 		end 
 	end
       

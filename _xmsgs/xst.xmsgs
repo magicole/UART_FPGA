@@ -5,14 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLCompiler" num="1660" delta="new" >"/home/katie/Documents/ECE3700/UART_FPGA/clock_divider.v" Line 34: Procedural assignment to a non-register <arg fmt="%s" index="1">clk_out</arg> is not permitted, left-hand side should be reg/integer/time/genvar
-</msg>
-
-<msg type="error" file="HDLCompiler" num="1660" delta="new" >"/home/katie/Documents/ECE3700/UART_FPGA/clock_divider.v" Line 34: Procedural assignment to a non-register <arg fmt="%s" index="1">clk_out</arg> is not permitted, left-hand side should be reg/integer/time/genvar
-</msg>
-
-<msg type="error" file="HDLCompiler" num="598" delta="new" >"/home/katie/Documents/ECE3700/UART_FPGA/clock_divider.v" Line 21: Module &lt;<arg fmt="%s" index="1">clock_divider</arg>&gt; ignored due to previous errors.
-</msg>
-
 </messages>
 
