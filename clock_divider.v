@@ -24,7 +24,7 @@ module clock_divider(
     );
 	 
 	 reg [9:0] counter = 10'b0; 
-	 parameter count_to = 650; 
+	 parameter count_to = 651; 
 
 	always@(posedge clk)
 	begin	
