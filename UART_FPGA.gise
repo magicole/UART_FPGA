@@ -166,9 +166,8 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1492997827" xil_pn:in_ck="423128836809161172" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="2645261372217731425" xil_pn:start_ts="1492997820">
+    <transform xil_pn:end_ts="1493065842" xil_pn:in_ck="423128836809161172" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="2645261372217731425" xil_pn:start_ts="1493065834">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Receiver.lso"/>
       <outfile xil_pn:name="Receiver.ngc"/>
