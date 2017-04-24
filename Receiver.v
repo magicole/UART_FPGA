@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    15:01:27 04/18/2017 
+// Create Date:    18:19:27 04/23/2017 
 // Design Name: 
-// Module Name:    clock_divider 
+// Module Name:    Receiver 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,23 +18,14 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module clock_divider(
+module Receiver(
+    input clr,
     input clk,
-    output reg clk_out = 1'b0
+    input RCV,
+    input RCV_ACK,
+    output RCV_REQ,
+    output [7:0] RCV_Data
     );
-	 
-	 reg [9:0] counter = 10'b0; 
-	 parameter count_to = 651; 
 
-	//Sets up the registers
-	always@(posedge clk)
-	begin	
-		if(counter == count_to)
-		begin
-			counter <= 10'b0; 
-			clk_out <= ~clk_out;
-		end
-		else
-			counter <= counter + 1'b1; 
-	end
+
 endmodule
