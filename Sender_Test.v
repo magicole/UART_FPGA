@@ -73,9 +73,10 @@ module Sender_Test;
 	parameter slow_count_to = 3;
 	reg slow_clk = 0;
 
-	//Sets up the registers
+	//Sequential logic block for our 76.8khz clk
 	always@(posedge fast_clk)
 	begin	
+		//Set up slow clock
 		if(counter == count_to)
 		begin
 			counter <= 10'b0; 
@@ -85,6 +86,7 @@ module Sender_Test;
 			counter <= counter + 1'b1; 
 	end
 	
+	//Sequential logic block for our 9600 baud 'slow clk' 
 	always@(posedge clk)
 	begin
 		if(slow_counter == slow_count_to)
@@ -101,6 +103,7 @@ module Sender_Test;
 		end
 	end
 	
+	//Combinational block for sending data (the character 'a')
 	always@(*) 
 	begin
 		XMT_DATA <= 8'b01100001;

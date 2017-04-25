@@ -83,6 +83,7 @@ module Receiver_Test;
 			counter <= counter + 1'b1; 
 	end
 	
+	//Sequential logic for our slow clock modules
 	always@(posedge clk)
 	begin
 		if(slow_counter == slow_count_to)
@@ -99,8 +100,10 @@ module Receiver_Test;
 		end
 	end
 	
+	//State machine for receiving data (the letter 'a')
 	always@(*) 
 	begin
+		//Toggle the receive line based on the protocol
 		RCV <= 1;
 		case(state)
 			0:begin
