@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: Sender.prj
@@ -123,9 +123,9 @@ Elaborating module <Sender>.
 
 Synthesizing Unit <Sender>.
     Related source file is "/home/katie/Documents/ECE3700/UART_FPGA/Sender.v".
-        count_to = 4
+        count_to = 3
     Found 1-bit register for signal <intnl_clk>.
-    Found 3-bit register for signal <counter>.
+    Found 2-bit register for signal <counter>.
     Found 4-bit register for signal <state>.
     Found finite state machine <FSM_0> for signal <state>.
     -----------------------------------------------------------------------
@@ -138,11 +138,11 @@ Synthesizing Unit <Sender>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 3-bit adder for signal <counter[2]_GND_1_o_add_5_OUT> created at line 55.
-    Found 1-bit 12-to-1 multiplexer for signal <XMT> created at line 63.
+    Found 2-bit adder for signal <counter[1]_GND_1_o_add_5_OUT> created at line 55.
+    Found 1-bit 12-to-1 multiplexer for signal <XMT> created at line 64.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred   4 D-type flip-flop(s).
+	inferred   3 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <Sender> synthesized.
@@ -152,10 +152,10 @@ HDL Synthesis Report
 
 Macro Statistics
 # Adders/Subtractors                                   : 1
- 3-bit adder                                           : 1
+ 2-bit adder                                           : 1
 # Registers                                            : 2
  1-bit register                                        : 1
- 3-bit register                                        : 1
+ 2-bit register                                        : 1
 # Multiplexers                                         : 1
  1-bit 12-to-1 multiplexer                             : 1
 # FSMs                                                 : 1
@@ -176,7 +176,7 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # Counters                                             : 1
- 3-bit up counter                                      : 1
+ 2-bit up counter                                      : 1
 # Registers                                            : 1
  Flip-Flops                                            : 1
 # Multiplexers                                         : 1
@@ -218,8 +218,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 8
- Flip-Flops                                            : 8
+# Registers                                            : 7
+ Flip-Flops                                            : 7
 
 =========================================================================
 
@@ -243,15 +243,15 @@ Top Level Output File Name         : Sender.ngc
 Primitive and Black Box Usage:
 ------------------------------
 # BELS                             : 17
+#      INV                         : 1
 #      LUT2                        : 2
-#      LUT3                        : 3
-#      LUT4                        : 4
-#      LUT5                        : 3
-#      LUT6                        : 4
+#      LUT3                        : 1
+#      LUT4                        : 3
+#      LUT5                        : 4
+#      LUT6                        : 5
 #      MUXF7                       : 1
-# FlipFlops/Latches                : 8
+# FlipFlops/Latches                : 7
 #      FD                          : 7
-#      FDRE                        : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 12
@@ -265,16 +265,16 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:               8  out of  18224     0%  
+ Number of Slice Registers:               7  out of  18224     0%  
  Number of Slice LUTs:                   16  out of   9112     0%  
     Number used as Logic:                16  out of   9112     0%  
 
 Slice Logic Distribution: 
  Number of LUT Flip Flop pairs used:     16
-   Number with an unused Flip Flop:       8  out of     16    50%  
+   Number with an unused Flip Flop:       9  out of     16    56%  
    Number with an unused LUT:             0  out of     16     0%  
-   Number of fully used LUT-FF pairs:     8  out of     16    50%  
-   Number of unique control sets:         2
+   Number of fully used LUT-FF pairs:     7  out of     16    43%  
+   Number of unique control sets:         1
 
 IO Utilization: 
  Number of IOs:                          13
@@ -304,7 +304,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 8     |
+clk                                | BUFGP                  | 7     |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -315,10 +315,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 2.631ns (Maximum Frequency: 380.141MHz)
-   Minimum input arrival time before clock: 3.396ns
-   Maximum output required time after clock: 5.929ns
-   Maximum combinational path delay: 6.364ns
+   Minimum period: 2.557ns (Maximum Frequency: 391.007MHz)
+   Minimum input arrival time before clock: 3.307ns
+   Maximum output required time after clock: 6.019ns
+   Maximum combinational path delay: 6.474ns
 
 Timing Details:
 ---------------
@@ -326,52 +326,53 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.631ns (frequency: 380.141MHz)
-  Total number of paths / destination ports: 48 / 10
+  Clock period: 2.557ns (frequency: 391.007MHz)
+  Total number of paths / destination ports: 35 / 7
 -------------------------------------------------------------------------
-Delay:               2.631ns (Levels of Logic = 2)
-  Source:            state_FSM_FFd1 (FF)
+Delay:               2.557ns (Levels of Logic = 2)
+  Source:            state_FSM_FFd4 (FF)
   Destination:       state_FSM_FFd4 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: state_FSM_FFd1 to state_FSM_FFd4
+  Data Path: state_FSM_FFd4 to state_FSM_FFd4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               6   0.447   0.992  state_FSM_FFd1 (state_FSM_FFd1)
-     LUT5:I1->O            1   0.203   0.684  state_FSM_FFd3-In_SW0 (N01)
-     LUT4:I2->O            1   0.203   0.000  state_FSM_FFd3-In (state_FSM_FFd3-In)
-     FD:D                      0.102          state_FSM_FFd3
+     FD:C->Q               7   0.447   1.021  state_FSM_FFd4 (state_FSM_FFd4)
+     LUT5:I1->O            1   0.203   0.580  state_FSM_FFd4-In_SW0 (N01)
+     LUT6:I5->O            1   0.205   0.000  state_FSM_FFd4-In (state_FSM_FFd4-In)
+     FD:D                      0.102          state_FSM_FFd4
     ----------------------------------------
-    Total                      2.631ns (0.955ns logic, 1.676ns route)
-                                       (36.3% logic, 63.7% route)
+    Total                      2.557ns (0.957ns logic, 1.600ns route)
+                                       (37.4% logic, 62.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
   Total number of paths / destination ports: 7 / 5
 -------------------------------------------------------------------------
-Offset:              3.396ns (Levels of Logic = 2)
-  Source:            clr (PAD)
-  Destination:       intnl_clk (FF)
+Offset:              3.307ns (Levels of Logic = 3)
+  Source:            XMT_REQ (PAD)
+  Destination:       state_FSM_FFd4 (FF)
   Destination Clock: clk rising
 
-  Data Path: clr to intnl_clk
+  Data Path: XMT_REQ to state_FSM_FFd4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   1.222   0.962  clr_IBUF (clr_IBUF)
-     LUT4:I0->O            1   0.203   0.579  _n00391 (_n0039)
-     FDRE:R                    0.430          intnl_clk
+     IBUF:I->O             3   1.222   0.995  XMT_REQ_IBUF (XMT_REQ_IBUF)
+     LUT5:I0->O            1   0.203   0.580  state_FSM_FFd4-In_SW0 (N01)
+     LUT6:I5->O            1   0.205   0.000  state_FSM_FFd4-In (state_FSM_FFd4-In)
+     FD:D                      0.102          state_FSM_FFd4
     ----------------------------------------
-    Total                      3.396ns (1.855ns logic, 1.541ns route)
-                                       (54.6% logic, 45.4% route)
+    Total                      3.307ns (1.732ns logic, 1.575ns route)
+                                       (52.4% logic, 47.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 13 / 2
+  Total number of paths / destination ports: 16 / 2
 -------------------------------------------------------------------------
-Offset:              5.929ns (Levels of Logic = 4)
+Offset:              6.019ns (Levels of Logic = 4)
   Source:            state_FSM_FFd3 (FF)
   Destination:       XMT (PAD)
   Source Clock:      clk rising
@@ -380,35 +381,35 @@ Offset:              5.929ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               8   0.447   1.167  state_FSM_FFd3 (state_FSM_FFd3)
-     LUT6:I0->O            2   0.203   0.617  Mmux_XMT21 (Mmux_XMT2)
-     LUT6:I5->O            1   0.205   0.000  Mmux_XMT24_G (N5)
-     MUXF7:I1->O           1   0.140   0.579  Mmux_XMT24 (XMT_OBUF)
+     FD:C->Q              10   0.447   1.201  state_FSM_FFd3 (state_FSM_FFd3)
+     LUT5:I0->O            1   0.203   0.684  Mmux_XMT23 (Mmux_XMT22)
+     LUT6:I4->O            1   0.203   0.000  Mmux_XMT26_F (N4)
+     MUXF7:I0->O           1   0.131   0.579  Mmux_XMT26 (XMT_OBUF)
      OBUF:I->O                 2.571          XMT_OBUF (XMT)
     ----------------------------------------
-    Total                      5.929ns (3.566ns logic, 2.363ns route)
-                                       (60.1% logic, 39.9% route)
+    Total                      6.019ns (3.555ns logic, 2.464ns route)
+                                       (59.1% logic, 40.9% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 12 / 1
+  Total number of paths / destination ports: 9 / 1
 -------------------------------------------------------------------------
-Delay:               6.364ns (Levels of Logic = 5)
-  Source:            XMT_DATA<2> (PAD)
+Delay:               6.474ns (Levels of Logic = 5)
+  Source:            XMT_REQ (PAD)
   Destination:       XMT (PAD)
 
-  Data Path: XMT_DATA<2> to XMT
+  Data Path: XMT_REQ to XMT
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.222   0.827  XMT_DATA_2_IBUF (XMT_DATA_2_IBUF)
-     LUT6:I2->O            2   0.203   0.617  Mmux_XMT21 (Mmux_XMT2)
-     LUT6:I5->O            1   0.205   0.000  Mmux_XMT24_G (N5)
-     MUXF7:I1->O           1   0.140   0.579  Mmux_XMT24 (XMT_OBUF)
+     IBUF:I->O             3   1.222   0.879  XMT_REQ_IBUF (XMT_REQ_IBUF)
+     LUT5:I2->O            1   0.205   0.684  Mmux_XMT23 (Mmux_XMT22)
+     LUT6:I4->O            1   0.203   0.000  Mmux_XMT26_F (N4)
+     MUXF7:I0->O           1   0.131   0.579  Mmux_XMT26 (XMT_OBUF)
      OBUF:I->O                 2.571          XMT_OBUF (XMT)
     ----------------------------------------
-    Total                      6.364ns (4.341ns logic, 2.023ns route)
-                                       (68.2% logic, 31.8% route)
+    Total                      6.474ns (4.332ns logic, 2.142ns route)
+                                       (66.9% logic, 33.1% route)
 
 =========================================================================
 
@@ -420,14 +421,14 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.631|         |         |         |
+clk            |    2.557|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.43 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.69 secs
  
 --> 
 

@@ -1,0 +1,29 @@
+Command line:
+   Receiver_Test_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  36486
+
+Mon Apr 24 19:23:03 2017
+
+
+ Elaboration Time: 0.01 sec
+
+ Current Memory Usage: 196.243 Meg
+
+ Total Signals          : 19
+ Total Nets             : 26
+ Total Signal Drivers   : 11
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 20
+ Total Traceable Variables  : 37
+ Total Scalar Nets and Variables : 249
+Total Line Count : 157
+
+ Total Simulation Time: 0.68 sec
+
+ Current Memory Usage: 271.745 Meg
+
+Mon Apr 24 19:29:21 2017
+

@@ -28,7 +28,7 @@ module Receiver(
     );
 	 
 	reg intnl_clk = 1; 
-	reg[2:0] counter = 3; 
+	reg[1:0] counter = 3; 
 	reg[3:0] state = 4'b0; 
 	reg[3:0] next_state = 4'b0;  
 	parameter count_to = 3; 
@@ -135,7 +135,9 @@ module Receiver(
 				if(RCV_ACK) begin
 					next_state = 10; 
 				end
-				next_state = 9; 
+				else begin
+					next_state = 9; 
+				end
 			end
 			
 			10: begin

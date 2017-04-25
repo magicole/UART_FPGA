@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/katie/Documents/ECE3700/UART_FPGA/Sender_Test_isim_beh.exe" -prj "/home/katie/Documents/ECE3700/UART_FPGA/Sender_Test_beh.prj" "work.Sender_Test" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/katie/Documents/ECE3700/UART_FPGA/Receiver_Test_isim_beh.exe" -prj "/home/katie/Documents/ECE3700/UART_FPGA/Receiver_Test_beh.prj" "work.Receiver_Test" "work.glbl" 

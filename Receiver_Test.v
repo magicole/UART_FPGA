@@ -145,8 +145,19 @@ module Receiver_Test;
 			end
 			10:begin
 				RCV <= 1;
-				next_state = 0;
+				RCV_ACK <= 1; 
+				next_state = 11;
 				$display(RCV_DATA);
+			end
+			11: begin
+				if(RCV_REQ == 0) begin
+					RCV_ACK = 0; 
+					next_state = 0; 
+				end
+				else begin
+					RCV_ACK = 1; 
+					next_state = 11; 
+				end
 			end
 		endcase
 	end

@@ -28,7 +28,7 @@ module Sender(
     );
 
 	reg intnl_clk = 0; 
-	reg[2:0] counter = 0; 
+	reg[1:0] counter = 0; 
 	reg[3:0] state = 4'b0; 
 	reg[3:0] next_state = 4'b0;  
 	reg[7:0] temp_data = 7'b0; 

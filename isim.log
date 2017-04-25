@@ -1,5 +1,5 @@
 ISim log file
-Running: /home/katie/Documents/ECE3700/UART_FPGA/Sender_Test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/katie/Documents/ECE3700/UART_FPGA/Sender_Test_isim_beh.wdb 
+Running: /home/katie/Documents/ECE3700/UART_FPGA/Receiver_Test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/katie/Documents/ECE3700/UART_FPGA/Receiver_Test_isim_beh.wdb 
 ISim P.20131013 (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -14,29 +14,6 @@ Finished circuit initialization process.
 # run 100.00us
 # run 100.00us
 # run 100.00us
-First bit transmit success!
-# run 100.00us
-# run 100.00us
-# run 100.00us
-Second bit transmit success!
-# run 100.00us
-# run 100.00us
-Third bit transmit success!
-# run 100.00us
-# run 100.00us
-Fourth bit transmit success!
-# run 100.00us
-# run 100.00us
-Fifth bit transmit success!
-# run 100.00us
-# run 100.00us
-Sixth bit transmit success!
-# run 100.00us
-# run 100.00us
-Seventh bit transmit success!
-# run 100.00us
-# run 100.00us
-Eighth bit transmit success!
 # run 100.00us
 # run 100.00us
 # run 100.00us
@@ -45,29 +22,43 @@ Eighth bit transmit success!
 # run 100.00us
 # run 100.00us
 # run 100.00us
-First bit transmit success!
 # run 100.00us
 # run 100.00us
 # run 100.00us
-Second bit transmit success!
 # run 100.00us
 # run 100.00us
-Third bit transmit success!
 # run 100.00us
 # run 100.00us
-Fourth bit transmit success!
 # run 100.00us
 # run 100.00us
-Fifth bit transmit success!
+ 97
+ 97
 # run 100.00us
 # run 100.00us
-Sixth bit transmit success!
 # run 100.00us
 # run 100.00us
-Seventh bit transmit success!
 # run 100.00us
 # run 100.00us
-Eighth bit transmit success!
 # run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+# run 100.00us
+ 97
+ 97
 # run 100.00us
 # exit 0
