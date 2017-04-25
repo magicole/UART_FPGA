@@ -28,11 +28,11 @@ module Sender(
     );
 
 	reg intnl_clk = 0; 
-	reg[2:0] counter = 3'b0; 
+	reg[2:0] counter = 0; 
 	reg[3:0] state = 4'b0; 
 	reg[3:0] next_state = 4'b0;  
 	reg[7:0] temp_data = 7'b0; 
-	parameter count_to = 4; 
+	parameter count_to = 3; 
 	
 	always@(posedge clk) //monitor clear maybe? 
 	begin
@@ -60,63 +60,65 @@ module Sender(
 	always@(*)
 	begin
 		//XMT_ACK = 0;
+		XMT <= 1;
 		case(state)
 			0: begin
 				if(XMT_REQ)begin
 					temp_data = XMT_DATA;
 					next_state = 1;
+					XMT <= 0;
 				end 
 				else begin
 					next_state = 0;
 				end
 				XMT_ACK = 0;
-				XMT = 0;
+				//XMT = 0;
 			end //if XMT_Req line is high there's something to send - temp_data = XMT_Data
 			1: begin
 				temp_data = XMT_DATA;
-				XMT = temp_data[0];
+				XMT <= temp_data[0];
 				next_state = 2;
 				XMT_ACK = 0;
 			end//Push temp_data bit 0 out on XMT line
 			2: begin
 				temp_data = XMT_DATA;
-				XMT = temp_data[1];
+				XMT <= temp_data[1];
 				next_state = 3;
 				XMT_ACK = 0;
 			end//Push temp_data bit 1 out on XMT line
 			3: begin
 				temp_data = XMT_DATA;
-				XMT = temp_data[2];
+				XMT <= temp_data[2];
 				next_state = 4;
 				XMT_ACK = 0;
 			end//Push temp_data bit 2 out on XMT line 
 			4: begin
 				temp_data = XMT_DATA;
-				XMT = temp_data[3];
+				XMT <= temp_data[3];
 				next_state = 5;
 				XMT_ACK = 0;
 			end//Push temp_data bit 3 out on XMT line
 			5: begin
 				temp_data = XMT_DATA;
-				XMT = temp_data[4];
+				XMT <= temp_data[4];
 				next_state = 6;
 				XMT_ACK = 0;
 			end//Push temp_data bit 4 out on XMT line
 			6: begin
 				temp_data = XMT_DATA;
-				XMT = temp_data[5];
+				XMT <= temp_data[5];
 				next_state = 7;
 				XMT_ACK = 0;
 			end//Push temp_data bit 5 out on XMT line
 			7: begin
 				temp_data = XMT_DATA;
-				XMT = temp_data[6];
+				XMT <= temp_data[6];
 				next_state = 8;
 				XMT_ACK = 0;
 			end//Push temp_data bit 6 out on XMT line
 			8: begin
 				temp_data = XMT_DATA;
-				XMT = temp_data[7];
+				XMT <= temp_data[7];
 				next_state = 9;
 				XMT_ACK = 0;
 			end//Push temp_data bit 7 out on XMT line - note this is the parity bit which is used for error checking, it will always be zero in our system
@@ -128,18 +130,18 @@ module Sender(
 				end else begin
 					next_state = 9;
 				end
-				XMT = 0;
+				//XMT = 0;
 			end//if XMT_ACK (keep checking this until you get the ACK) 
 			10:begin
 				XMT_ACK = 0;
 				next_state = 0;
-				XMT = 0;
+				//XMT = 0;
 			end //if !XMT_REQ - XMT_ACK = 0
 			default: begin
 				next_state = 0;
 				temp_data = 0;
 				XMT_ACK = 0;
-				XMT = 0;
+				//XMT = 0;
 			end
 			
 		endcase

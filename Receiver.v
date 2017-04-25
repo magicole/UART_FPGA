@@ -27,11 +27,11 @@ module Receiver(
     output reg [7:0] RCV_DATA
     );
 	 
-	reg intnl_clk = 0; 
-	reg[2:0] counter = 3'b0; 
+	reg intnl_clk = 1; 
+	reg[2:0] counter = 3; 
 	reg[3:0] state = 4'b0; 
 	reg[3:0] next_state = 4'b0;  
-	parameter count_to = 4; 
+	parameter count_to = 3; 
 	
 	always@(posedge clk)
 	begin
@@ -63,10 +63,6 @@ module Receiver(
 			6: RCV_DATA[5] = RCV; 
 			7: RCV_DATA[6] = RCV; 
 			8:	RCV_DATA[7] = RCV; 
-			default: begin
-				//RCV_DATA = 0; 
-			end
-		
 		endcase
 		
 	end
@@ -77,7 +73,7 @@ module Receiver(
 		case(state)
 			0: begin
 				RCV_REQ = 0; 
-				if(!RCV) begin
+				if(RCV == 0) begin
 					next_state = 1; 
 				end
 				else begin
@@ -155,7 +151,6 @@ module Receiver(
 	
 			default: begin
 				RCV_REQ = 0; 
-				//RCV_DATA = 0; 
 				next_state = 0; 
 			end
 		

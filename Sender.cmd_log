@@ -7,3 +7,4 @@ xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.xst" -ofn
 xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.xst" -ofn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.syr" 
 xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.xst" -ofn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.syr" 
 xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.xst" -ofn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.syr" 
+xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.xst" -ofn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.syr" 

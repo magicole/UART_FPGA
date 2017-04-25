@@ -5,8 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">1010</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">state</arg>&gt;.
-</msg>
-
 </messages>
 

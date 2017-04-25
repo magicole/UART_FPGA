@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider_test_isim_beh.exe" -prj "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider_test_beh.prj" "work.clock_divider_test" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/katie/Documents/ECE3700/UART_FPGA/Sender_Test_isim_beh.exe" -prj "/home/katie/Documents/ECE3700/UART_FPGA/Sender_Test_beh.prj" "work.Sender_Test" "work.glbl" 

@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Reading design: Sender.prj
@@ -427,7 +427,7 @@ clk            |    2.631|         |         |         |
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.28 secs
+Total CPU time to Xst completion: 5.43 secs
  
 --> 
 
