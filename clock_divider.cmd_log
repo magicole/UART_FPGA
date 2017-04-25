@@ -1,2 +1,4 @@
 xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider.xst" -ofn "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider.syr" 
 xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider.xst" -ofn "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider.syr" 
+vhdtdtfi -lib work /home/katie/Documents/ECE3700/UART_FPGA/clock_divider.v -lang verilog -prj UART_FPGA -o clock_divider.spl -module clock_divider -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 clock_divider.spl /home/katie/Documents/ECE3700/UART_FPGA/clock_divider.sym 

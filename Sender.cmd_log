@@ -10,3 +10,5 @@ xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.xst" -ofn
 xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.xst" -ofn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.syr" 
 xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.xst" -ofn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.syr" 
 xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.xst" -ofn "/home/katie/Documents/ECE3700/UART_FPGA/Sender.syr" 
+vhdtdtfi -lib work /home/katie/Documents/ECE3700/UART_FPGA/Sender.v -lang verilog -prj UART_FPGA -o Sender.spl -module Sender -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 Sender.spl /home/katie/Documents/ECE3700/UART_FPGA/Sender.sym 

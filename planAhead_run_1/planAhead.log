@@ -1,0 +1,115 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Mon Apr 24 20:24:22 2017
+# Process ID: 13617
+# Log file: /home/katie/Documents/ECE3700/UART_FPGA/planAhead_run_1/planAhead.log
+# Journal file: /home/katie/Documents/ECE3700/UART_FPGA/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source /home/katie/Documents/ECE3700/UART_FPGA/pa.fromHdl.tcl
+# create_project -name UART_FPGA -dir "/home/katie/Documents/ECE3700/UART_FPGA/planAhead_run_1" -part xc6slx16csg324-3
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "uart.ucf" [current_fileset -constrset]
+Adding file '/home/katie/Documents/ECE3700/UART_FPGA/uart.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {Sender.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {Receiver.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {clock_divider.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {uart.vf}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set_property top uart $srcset
+# add_files [list {uart.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc6slx16csg324-3
+Using Verific elaboration
+Parsing VHDL file "/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Analyzing Verilog file "/home/katie/Documents/ECE3700/UART_FPGA/Sender.v" into library work
+Analyzing Verilog file "/home/katie/Documents/ECE3700/UART_FPGA/Receiver.v" into library work
+Analyzing Verilog file "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider.v" into library work
+Analyzing Verilog file "/home/katie/Documents/ECE3700/UART_FPGA/uart.vf" into library work
+Loading clock regions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockRegion.xml
+Loading clock buffers from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockBuffers.xml
+Loading package pin functions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx16/csg324/Package.xml
+Loading io standards from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [/home/katie/Documents/ECE3700/UART_FPGA/uart.ucf]
+Finished Parsing UCF File [/home/katie/Documents/ECE3700/UART_FPGA/uart.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: c7ce03c1
+open_rtl_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 2843.391 ; gain = 167.348
+update_compile_order -fileset sim_1
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+set_property iostandard LVCMOS33 [get_ports [list {DATA[7]} {DATA[6]} {DATA[5]} {DATA[4]} {DATA[3]} {DATA[2]} {DATA[1]} {DATA[0]}]]
+set_property iostandard LVCMOS33 [get_ports [list clr]]
+set_property iostandard LVCMOS33 [get_ports [list D_in]]
+set_property iostandard LVCMOS33 [get_ports [list D_out]]
+startgroup
+set_property package_pin B8 [get_ports clk]
+endgroup
+set_property package_pin "" [get_ports [list  clr]]
+startgroup
+set_property package_pin B8 [get_ports clk]
+endgroup
+startgroup
+set_property package_pin V10 [get_ports clk]
+endgroup
+startgroup
+set_property package_pin B8 [get_ports clr]
+endgroup
+startgroup
+set_property package_pin N17 [get_ports D_in]
+endgroup
+startgroup
+set_property package_pin N18 [get_ports D_out]
+endgroup
+startgroup
+set_property package_pin T11 [get_ports {DATA[7]}]
+endgroup
+startgroup
+set_property package_pin R11 [get_ports {DATA[6]}]
+endgroup
+startgroup
+set_property package_pin N11 [get_ports {DATA[5]}]
+endgroup
+startgroup
+set_property package_pin M11 [get_ports {DATA[4]}]
+endgroup
+startgroup
+set_property package_pin V15 [get_ports {DATA[3]}]
+endgroup
+startgroup
+set_property package_pin U15 [get_ports {DATA[2]}]
+endgroup
+startgroup
+set_property package_pin V16 [get_ports {DATA[1]}]
+endgroup
+startgroup
+set_property package_pin U16 [get_ports {DATA[0]}]
+endgroup
+save_constraints
+exit
+ERROR: [#UNDEF] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+ (See /home/katie/Documents/ECE3700/UART_FPGA/planAhead_pid13617.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Mon Apr 24 20:30:55 2017...
+INFO: [Common 17-83] Releasing license: PlanAhead

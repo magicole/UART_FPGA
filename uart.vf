@@ -1,0 +1,55 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : uart.vf
+// /___/   /\     Timestamp : 04/24/2017 20:04:53
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog /home/katie/Documents/ECE3700/UART_FPGA/uart.vf -w /home/katie/Documents/ECE3700/UART_FPGA/uart.sch
+//Design Name: uart
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module uart(clk, 
+            clr, 
+            D_in, 
+            DATA, 
+            D_out);
+
+    input clk;
+    input clr;
+    input D_in;
+   output [7:0] DATA;
+   output D_out;
+   
+   wire XLXN_3;
+   wire XLXN_5;
+   wire XLXN_6;
+   wire [7:0] DATA_DUMMY;
+   
+   assign DATA[7:0] = DATA_DUMMY[7:0];
+   clock_divider  XLXI_1 (.clk(clk), 
+                         .clk_out(XLXN_5));
+   Sender  XLXI_2 (.clk(XLXN_5), 
+                  .clr(clr), 
+                  .XMT_DATA(DATA_DUMMY[7:0]), 
+                  .XMT_REQ(XLXN_3), 
+                  .XMT(D_out), 
+                  .XMT_ACK(XLXN_6));
+   Receiver  XLXI_3 (.clk(XLXN_5), 
+                    .clr(clr), 
+                    .RCV(D_in), 
+                    .RCV_ACK(XLXN_6), 
+                    .RCV_DATA(DATA_DUMMY[7:0]), 
+                    .RCV_REQ(XLXN_3));
+endmodule

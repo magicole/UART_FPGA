@@ -1,0 +1,4 @@
+verilog work "Sender.v"
+verilog work "Receiver.v"
+verilog work "clock_divider.v"
+verilog work "uart.vf"

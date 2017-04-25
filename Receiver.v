@@ -39,6 +39,7 @@ module Receiver(
 		begin
 			state <= 0; 
 			intnl_clk <= 0; 
+			RCV_DATA = 8'b0;
 		end
 		if(counter == count_to)
 		begin

@@ -1,0 +1,12 @@
+[Inputs]
+clr
+clk
+RCV
+RCV_ACK
+[Outputs]
+RCV_REQ
+=RCV_DATA[7:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel Receiver
+

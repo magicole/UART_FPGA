@@ -20,3 +20,5 @@ xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/Receiver.xst" -o
 xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/Receiver.xst" -ofn "/home/katie/Documents/ECE3700/UART_FPGA/Receiver.syr" 
 xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/Receiver.xst" -ofn "/home/katie/Documents/ECE3700/UART_FPGA/Receiver.syr" 
 xst -intstyle ise -ifn "/home/katie/Documents/ECE3700/UART_FPGA/Receiver.xst" -ofn "/home/katie/Documents/ECE3700/UART_FPGA/Receiver.syr" 
+vhdtdtfi -lib work /home/katie/Documents/ECE3700/UART_FPGA/Receiver.v -lang verilog -prj UART_FPGA -o Receiver.spl -module Receiver -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 Receiver.spl /home/katie/Documents/ECE3700/UART_FPGA/Receiver.sym 

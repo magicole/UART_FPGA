@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/katie/Documents/ECE3700/UART_FPGA/uart.ncd
+OUTFILE=/home/katie/Documents/ECE3700/UART_FPGA/uart.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=/home/katie/Documents/ECE3700/UART_FPGA
+LICENSE=WebPack
+USER_INFO=211301970_0_0_372

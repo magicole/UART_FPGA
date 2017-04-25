@@ -1,0 +1,559 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+Reading design: uart.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "uart.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "uart"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : uart
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/katie/Documents/ECE3700/UART_FPGA/Sender.v" into library work
+Parsing module <Sender>.
+Analyzing Verilog file "/home/katie/Documents/ECE3700/UART_FPGA/Receiver.v" into library work
+Parsing module <Receiver>.
+Analyzing Verilog file "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider.v" into library work
+Parsing module <clock_divider>.
+Analyzing Verilog file "/home/katie/Documents/ECE3700/UART_FPGA/uart.vf" into library work
+Parsing module <uart>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <uart>.
+
+Elaborating module <clock_divider>.
+
+Elaborating module <Sender>.
+
+Elaborating module <Receiver>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uart>.
+    Related source file is "/home/katie/Documents/ECE3700/UART_FPGA/uart.vf".
+    Summary:
+	no macro.
+Unit <uart> synthesized.
+
+Synthesizing Unit <clock_divider>.
+    Related source file is "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider.v".
+        count_to = 651
+    Found 1-bit register for signal <clk_out>.
+    Found 10-bit register for signal <counter>.
+    Found 10-bit adder for signal <counter[9]_GND_2_o_add_2_OUT> created at line 38.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  11 D-type flip-flop(s).
+Unit <clock_divider> synthesized.
+
+Synthesizing Unit <Sender>.
+    Related source file is "/home/katie/Documents/ECE3700/UART_FPGA/Sender.v".
+        count_to = 3
+    Found 1-bit register for signal <intnl_clk>.
+    Found 2-bit register for signal <counter>.
+    Found 4-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 11                                             |
+    | Transitions        | 54                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 2-bit adder for signal <counter[1]_GND_3_o_add_5_OUT> created at line 55.
+    Found 1-bit 12-to-1 multiplexer for signal <XMT> created at line 64.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   3 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <Sender> synthesized.
+
+Synthesizing Unit <Receiver>.
+    Related source file is "/home/katie/Documents/ECE3700/UART_FPGA/Receiver.v".
+        count_to = 3
+    Found 1-bit register for signal <intnl_clk>.
+    Found 1-bit register for signal <RCV_DATA<7>>.
+    Found 1-bit register for signal <RCV_DATA<6>>.
+    Found 1-bit register for signal <RCV_DATA<5>>.
+    Found 1-bit register for signal <RCV_DATA<4>>.
+    Found 1-bit register for signal <RCV_DATA<3>>.
+    Found 1-bit register for signal <RCV_DATA<2>>.
+    Found 1-bit register for signal <RCV_DATA<1>>.
+    Found 1-bit register for signal <RCV_DATA<0>>.
+    Found 2-bit register for signal <counter>.
+    Found 4-bit register for signal <state>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 11                                             |
+    | Transitions        | 56                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 9                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 2-bit adder for signal <counter[1]_GND_4_o_add_6_OUT> created at line 55.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  11 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <Receiver> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 10-bit adder                                          : 1
+ 2-bit adder                                           : 2
+# Registers                                            : 7
+ 1-bit register                                        : 3
+ 10-bit register                                       : 1
+ 2-bit register                                        : 2
+ 8-bit register                                        : 1
+# Multiplexers                                         : 2
+ 1-bit 12-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <Receiver>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <Receiver> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Sender>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <Sender> synthesized (advanced).
+
+Synthesizing (advanced) Unit <clock_divider>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <clock_divider> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 10-bit up counter                                     : 1
+ 2-bit up counter                                      : 2
+# Registers                                            : 11
+ Flip-Flops                                            : 11
+# Multiplexers                                         : 2
+ 1-bit 12-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_2/FSM_0> on signal <state[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
+ 1001  | 1001
+ 1010  | 1010
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_3/FSM_1> on signal <state[1:4]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0011
+ 0011  | 0010
+ 0100  | 0110
+ 0101  | 0111
+ 0110  | 0101
+ 0111  | 0100
+ 1000  | 1100
+ 1001  | 1101
+ 1010  | 1111
+-------------------
+
+Optimizing unit <uart> ...
+
+Optimizing unit <Sender> ...
+
+Optimizing unit <Receiver> ...
+INFO:Xst:3203 - The FF/Latch <XLXI_2/counter_0> in Unit <uart> is the opposite to the following FF/Latch, which will be removed : <XLXI_3/counter_0> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 32
+ Flip-Flops                                            : 32
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : uart.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 91
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 9
+#      LUT2                        : 17
+#      LUT3                        : 5
+#      LUT4                        : 8
+#      LUT5                        : 8
+#      LUT6                        : 20
+#      MUXCY                       : 9
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 10
+# FlipFlops/Latches                : 32
+#      FD                          : 30
+#      FDR                         : 2
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 11
+#      IBUF                        : 2
+#      OBUF                        : 9
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              32  out of  18224     0%  
+ Number of Slice LUTs:                   69  out of   9112     0%  
+    Number used as Logic:                69  out of   9112     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     69
+   Number with an unused Flip Flop:      37  out of     69    53%  
+   Number with an unused LUT:             0  out of     69     0%  
+   Number of fully used LUT-FF pairs:    32  out of     69    46%  
+   Number of unique control sets:         3
+
+IO Utilization: 
+ Number of IOs:                          12
+ Number of bonded IOBs:                  12  out of    232     5%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+XLXI_1/clk_out                     | BUFG                   | 21    |
+clk                                | BUFGP                  | 11    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 3.597ns (Maximum Frequency: 277.975MHz)
+   Minimum input arrival time before clock: 3.828ns
+   Maximum output required time after clock: 7.012ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'XLXI_1/clk_out'
+  Clock period: 2.868ns (frequency: 348.705MHz)
+  Total number of paths / destination ports: 150 / 23
+-------------------------------------------------------------------------
+Delay:               2.868ns (Levels of Logic = 2)
+  Source:            XLXI_3/state_FSM_FFd1 (FF)
+  Destination:       XLXI_3/RCV_DATA_4 (FF)
+  Source Clock:      XLXI_1/clk_out rising
+  Destination Clock: XLXI_1/clk_out rising
+
+  Data Path: XLXI_3/state_FSM_FFd1 to XLXI_3/RCV_DATA_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              15   0.447   1.086  XLXI_3/state_FSM_FFd1 (XLXI_3/state_FSM_FFd1)
+     LUT2:I0->O            1   0.203   0.827  XLXI_3/state[3]_RCV_DATA[7]_select_18_OUT<3>_SW0 (N8)
+     LUT6:I2->O            1   0.203   0.000  XLXI_3/state[3]_RCV_DATA[7]_select_18_OUT<3> (XLXI_3/state[3]_RCV_DATA[7]_select_18_OUT<4>)
+     FD:D                      0.102          XLXI_3/RCV_DATA_4
+    ----------------------------------------
+    Total                      2.868ns (0.955ns logic, 1.913ns route)
+                                       (33.3% logic, 66.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.597ns (frequency: 277.975MHz)
+  Total number of paths / destination ports: 167 / 11
+-------------------------------------------------------------------------
+Delay:               3.597ns (Levels of Logic = 3)
+  Source:            XLXI_1/counter_1 (FF)
+  Destination:       XLXI_1/counter_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: XLXI_1/counter_1 to XLXI_1/counter_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.961  XLXI_1/counter_1 (XLXI_1/counter_1)
+     LUT5:I0->O            2   0.203   0.617  XLXI_1/GND_2_o_GND_2_o_equal_2_o<9>_SW0 (N3)
+     LUT6:I5->O           10   0.205   0.857  XLXI_1/GND_2_o_GND_2_o_equal_2_o<9> (XLXI_1/GND_2_o_GND_2_o_equal_2_o)
+     LUT2:I1->O            1   0.205   0.000  XLXI_1/counter_0_rstpot (XLXI_1/counter_0_rstpot)
+     FD:D                      0.102          XLXI_1/counter_0
+    ----------------------------------------
+    Total                      3.597ns (1.162ns logic, 2.435ns route)
+                                       (32.3% logic, 67.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'XLXI_1/clk_out'
+  Total number of paths / destination ports: 27 / 18
+-------------------------------------------------------------------------
+Offset:              3.828ns (Levels of Logic = 3)
+  Source:            clr (PAD)
+  Destination:       XLXI_3/RCV_DATA_2 (FF)
+  Destination Clock: XLXI_1/clk_out rising
+
+  Data Path: clr to XLXI_3/RCV_DATA_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            18   1.222   1.154  clr_IBUF (clr_IBUF)
+     LUT2:I0->O            1   0.203   0.944  XLXI_3/state[3]_RCV_DATA[7]_select_18_OUT<5>_SW0 (N12)
+     LUT6:I0->O            1   0.203   0.000  XLXI_3/state[3]_RCV_DATA[7]_select_18_OUT<5> (XLXI_3/state[3]_RCV_DATA[7]_select_18_OUT<2>)
+     FD:D                      0.102          XLXI_3/RCV_DATA_2
+    ----------------------------------------
+    Total                      3.828ns (1.730ns logic, 2.098ns route)
+                                       (45.2% logic, 54.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'XLXI_1/clk_out'
+  Total number of paths / destination ports: 33 / 9
+-------------------------------------------------------------------------
+Offset:              7.012ns (Levels of Logic = 5)
+  Source:            XLXI_3/state_FSM_FFd1 (FF)
+  Destination:       D_out (PAD)
+  Source Clock:      XLXI_1/clk_out rising
+
+  Data Path: XLXI_3/state_FSM_FFd1 to D_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              15   0.447   1.210  XLXI_3/state_FSM_FFd1 (XLXI_3/state_FSM_FFd1)
+     LUT3:I0->O            3   0.205   0.879  XLXI_3/state_RCV_REQ1 (XLXN_3)
+     LUT5:I2->O            1   0.205   0.580  XLXI_2/Mmux_XMT25 (XLXI_2/Mmux_XMT24)
+     LUT6:I5->O            1   0.205   0.000  XLXI_2/Mmux_XMT26_F (N16)
+     MUXF7:I0->O           1   0.131   0.579  XLXI_2/Mmux_XMT26 (D_out_OBUF)
+     OBUF:I->O                 2.571          D_out_OBUF (D_out)
+    ----------------------------------------
+    Total                      7.012ns (3.764ns logic, 3.248ns route)
+                                       (53.7% logic, 46.3% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock XLXI_1/clk_out
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+XLXI_1/clk_out |    2.868|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.597|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 12.77 secs
+ 
+--> 
+
+
+Total memory usage is 387296 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

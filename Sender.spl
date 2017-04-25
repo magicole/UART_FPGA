@@ -1,0 +1,12 @@
+[Inputs]
+clr
+XMT_REQ
+clk
+=XMT_DATA[7:0]=
+[Outputs]
+XMT_ACK
+XMT
+[BiDir]
+[ATTRIBUTES]
+VeriModel Sender
+
