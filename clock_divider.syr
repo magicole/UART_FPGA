@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Reading design: clock_divider.prj
@@ -123,7 +123,7 @@ Elaborating module <clock_divider>.
 
 Synthesizing Unit <clock_divider>.
     Related source file is "/home/katie/Documents/ECE3700/UART_FPGA/clock_divider.v".
-        count_to = 650
+        count_to = 651
     Found 1-bit register for signal <clk_out>.
     Found 10-bit register for signal <counter>.
     Found 10-bit adder for signal <counter[9]_GND_1_o_add_2_OUT> created at line 37.
@@ -294,16 +294,16 @@ Timing constraint: Default period analysis for Clock 'clk'
   Total number of paths / destination ports: 167 / 11
 -------------------------------------------------------------------------
 Delay:               3.597ns (Levels of Logic = 3)
-  Source:            counter_4 (FF)
+  Source:            counter_1 (FF)
   Destination:       counter_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: counter_4 to counter_0
+  Data Path: counter_1 to counter_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.961  counter_4 (counter_4)
+     FD:C->Q               2   0.447   0.961  counter_1 (counter_1)
      LUT5:I0->O            2   0.203   0.617  GND_1_o_GND_1_o_equal_2_o<9>_SW0 (N3)
      LUT6:I5->O           10   0.205   0.857  GND_1_o_GND_1_o_equal_2_o<9> (GND_1_o_GND_1_o_equal_2_o)
      LUT2:I1->O            1   0.205   0.000  counter_0_rstpot (counter_0_rstpot)
@@ -348,7 +348,7 @@ clk            |    3.597|         |         |         |
 
 
 Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 5.29 secs
+Total CPU time to Xst completion: 5.52 secs
  
 --> 
 

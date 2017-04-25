@@ -34,35 +34,37 @@ module Sender(
 	reg[7:0] temp_data = 7'b0; 
 	parameter count_to = 3; 
 	
-	always@(posedge clk) //monitor clear maybe? 
+	//Sequential block for setting up registers
+	always@(posedge clk) 
 	begin
-		if(clr)
-		begin
+		//Clear, reset the state
+		if(clr) begin
 			state <= 0; 
 			intnl_clk <= 0; 
 		end
-		if(counter == count_to)
-		begin
+		
+		//Reset counter to zero, invert our internal clock and 
+		//if it's low move to the next state in the state machine
+		//below
+		if(counter == count_to) begin
 			counter <= 1'b0; 
 			intnl_clk <= ~intnl_clk; 
-			if(intnl_clk == 0)
-			begin
+			if(intnl_clk == 0) begin
 				state <= next_state; 
 			end
-		end
-		else
-		begin
+		end 
+		//Haven't reached count_to limit, just increment counter
+		else begin
 			counter <= counter + 1'b1; 
 		end
 	end
 	
 	//Combinational block sets up the state machine	
-	always@(*)
-	begin
-		//XMT_ACK = 0;
+	always@(*) begin
 		XMT <= 1;
 		case(state)
 			0: begin
+				//If XMT_REQ is high, we're about to send something go to the next state and set XMT low
 				if(XMT_REQ)begin
 					temp_data = XMT_DATA;
 					next_state = 1;
@@ -73,82 +75,87 @@ module Sender(
 				end
 				XMT_ACK = 0;
 				//XMT = 0;
-			end //if XMT_Req line is high there's something to send - temp_data = XMT_Data
+			end
 			1: begin
+				//Push temp_data bit 0 out on XMT line
 				temp_data = XMT_DATA;
 				XMT <= temp_data[0];
 				next_state = 2;
 				XMT_ACK = 0;
-			end//Push temp_data bit 0 out on XMT line
+			end
 			2: begin
+				//Push temp_data bit 1 out on XMT line
 				temp_data = XMT_DATA;
 				XMT <= temp_data[1];
 				next_state = 3;
 				XMT_ACK = 0;
-			end//Push temp_data bit 1 out on XMT line
+			end
 			3: begin
+				//Push temp_data bit 2 out on XMT line 
 				temp_data = XMT_DATA;
 				XMT <= temp_data[2];
 				next_state = 4;
 				XMT_ACK = 0;
-			end//Push temp_data bit 2 out on XMT line 
+			end
 			4: begin
+				//Push temp_data bit 3 out on XMT line
 				temp_data = XMT_DATA;
 				XMT <= temp_data[3];
 				next_state = 5;
 				XMT_ACK = 0;
-			end//Push temp_data bit 3 out on XMT line
+			end
 			5: begin
+				//Push temp_data bit 4 out on XMT line
 				temp_data = XMT_DATA;
 				XMT <= temp_data[4];
 				next_state = 6;
 				XMT_ACK = 0;
-			end//Push temp_data bit 4 out on XMT line
+			end
 			6: begin
+				//Push temp_data bit 5 out on XMT line
 				temp_data = XMT_DATA;
 				XMT <= temp_data[5];
 				next_state = 7;
 				XMT_ACK = 0;
-			end//Push temp_data bit 5 out on XMT line
+			end
 			7: begin
+				//Push temp_data bit 6 out on XMT line
 				temp_data = XMT_DATA;
 				XMT <= temp_data[6];
 				next_state = 8;
 				XMT_ACK = 0;
-			end//Push temp_data bit 6 out on XMT line
+			end
 			8: begin
+				//Push temp_data bit 7 out on XMT line
 				temp_data = XMT_DATA;
 				XMT <= temp_data[7];
 				next_state = 9;
 				XMT_ACK = 0;
-			end//Push temp_data bit 7 out on XMT line - note this is the parity bit which is used for error checking, it will always be zero in our system
+			end
 			9: begin
+				//Bring XMT_ACK high so receiver knows that you're done sending
 				temp_data = XMT_DATA;
 				XMT_ACK = 1;
+				//Check that XMT_REQ has been brought low. When it has, go to the next state which brings XMT_ACK low and then goes back to the starting state
 				if(!XMT_REQ)begin
 					next_state = 10;
 				end else begin
 					next_state = 9;
 				end
-				//XMT = 0;
-			end//if XMT_ACK (keep checking this until you get the ACK) 
+				
+			end
 			10:begin
+				//Set XMT_ACK low and next_state back to start state
 				XMT_ACK = 0;
 				next_state = 0;
-				//XMT = 0;
-			end //if !XMT_REQ - XMT_ACK = 0
+			end 
 			default: begin
+				//default state just handles implied latches
 				next_state = 0;
 				temp_data = 0;
 				XMT_ACK = 0;
-				//XMT = 0;
 			end
-			
 		endcase
 	end
-	/*always@(posedge intnl_clk)
-	begin
-		state = 
-	end*/
 
 endmodule

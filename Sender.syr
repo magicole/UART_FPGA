@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: Sender.prj
@@ -138,8 +138,8 @@ Synthesizing Unit <Sender>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 2-bit adder for signal <counter[1]_GND_1_o_add_5_OUT> created at line 55.
-    Found 1-bit 12-to-1 multiplexer for signal <XMT> created at line 64.
+    Found 2-bit adder for signal <counter[1]_GND_1_o_add_5_OUT> created at line 58.
+    Found 1-bit 12-to-1 multiplexer for signal <XMT> created at line 65.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   3 D-type flip-flop(s).
@@ -427,13 +427,13 @@ clk            |    2.557|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.69 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.44 secs
  
 --> 
 
 
-Total memory usage is 386836 kilobytes
+Total memory usage is 386828 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
